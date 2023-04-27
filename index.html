@@ -14,5 +14,14 @@
         <input type="text" id="robotCommandInput" placeholder="Input Command">
     </div>
     <script src="robot.js"></script>
+    <script>
+        document.getElementById('robotCommandInput').addEventListener('input', function () {
+            const commandInput = this.value.toUpperCase();
+            const newPositon = handleCommand(commandInput);
+            // Update the positionX and positionY elements with the new values
+            document.getElementById('positionX').innerHTML = newPositon.X;
+            document.getElementById('positionY').innerHTML = newPositon.Y;
+        });
+    </script>
 </body>
 </html>

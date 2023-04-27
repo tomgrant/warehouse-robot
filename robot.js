@@ -63,12 +63,9 @@ function handleCommand(commandInput) {
         }
     });
 
-    // Update the positionX and positionY elements with the new values
-    document.getElementById('positionX').innerHTML = position.X;
-    document.getElementById('positionY').innerHTML = position.Y;
+    return position;
 }
 
-document.getElementById('robotCommandInput').addEventListener('input', function () {
-    const commandInput = this.value.toUpperCase();
-    handleCommand(commandInput);
-});
+if (typeof module != "undefined") { 
+    module.exports = handleCommand;
+}
